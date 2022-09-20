@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="AlgerieTelecomF.Views.Promotion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlgerieTelecomF.Views"
+              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="704" d:DesignWidth="970">
+    <Border CornerRadius="0 20 20 0">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFC1D2FF"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid Background="#FFDBE3F3">
+            <Button Content="Add Offre" HorizontalAlignment="Left" Height="27" Margin="712,62,0,0" VerticalAlignment="Top" Width="153" Click="Button_Click"/>
+            <ScrollViewer x:Name="scrl" Margin="8,186,8,8">
+
+
+                <StackPanel x:Name="stkofritem">
+                    <ItemsControl x:Name="itemsoffer" >
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate>
+
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+
+                        <ItemsControl.ItemsPanel>
+
+                            <ItemsPanelTemplate>
+
+                                <WrapPanel />
+
+                            </ItemsPanelTemplate>
+
+                        </ItemsControl.ItemsPanel>
+
+
+                    </ItemsControl>
+
+                </StackPanel>
+
+
+            </ScrollViewer>
+            <ComboBox  x:Name="comboconv" Style="{DynamicResource MaterialDesignOutlinedComboBox}" HorizontalAlignment="Left" Height="36" Margin="292,62,0,0" VerticalAlignment="Top" Width="163"
+                       Visibility="Collapsed" 
+                      >
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <ComboBoxItem Content="{Binding Name}" Selected="SelectAgrement">
+                        
+                        </ComboBoxItem>
+
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="36" Margin="40,62,0,0" VerticalAlignment="Top" Width="210">
+                <Button Content="Offre" Width="99"></Button>
+                <Button Content="Convention" Width="109" Click="Button_Click_1"></Button>
+
+            </StackPanel>
+            <Border x:Name="BrdAddOfr"  Visibility="Collapsed" CornerRadius="20" BorderBrush="#FF757DED"  BorderThickness="4" HorizontalAlignment="Left" Height="242" Margin="254,122,0,0" VerticalAlignment="Top" Width="454">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4B88FA"/>
+                        <GradientStop Color="#FF2334FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid Margin="7,7,7,7">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF4B88FA"/>
+                            <GradientStop Color="#FF2334FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <TextBox x:Name="NameOfr" HorizontalAlignment="Left" Height="34" Margin="130,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <TextBox x:Name="TypeOfr" HorizontalAlignment="Left" Height="34" Margin="130,84,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <TextBox x:Name="CostOfr" PreviewTextInput="PreviewTextInput" HorizontalAlignment="Left" Height="34" Margin="130,132,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <Button Content="Submit" HorizontalAlignment="Left" Height="29" Margin="324,185,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click_2" Background="{x:Null}" BorderBrush="White"/>
+
+                </Grid>
+
+            </Border>
+
+
+        </Grid>
+
+    </Border>
+</UserControl>

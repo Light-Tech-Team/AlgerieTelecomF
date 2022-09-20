@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="AlgerieTelecomF.UserControls.OfferMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlgerieTelecomF.UserControls"
+             xmlns:uc="clr-namespace:AlgerieTelecomF.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="990">
+    <Border CornerRadius="20,20,20,20" Background="White" >
+        <Grid>
+            <ScrollViewer Visibility="Visible" x:Name="scrl" Margin="7,7,7,7" HorizontalScrollBarVisibility="Visible" CanContentScroll="True">
+
+
+                <StackPanel Width="970">
+                    <ItemsControl x:Name="itemsoffermain" >
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate>
+                               
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+
+                        <ItemsControl.ItemsPanel>
+
+                            <ItemsPanelTemplate>
+
+                                <StackPanel Orientation="Horizontal" CanHorizontallyScroll="True" />
+                            </ItemsPanelTemplate>
+
+                        </ItemsControl.ItemsPanel>
+
+
+                    </ItemsControl>
+
+                </StackPanel>
+
+
+            </ScrollViewer>
+
+        </Grid>
+    </Border>
+
+</UserControl>

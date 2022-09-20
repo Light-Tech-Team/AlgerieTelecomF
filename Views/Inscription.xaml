@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="AlgerieTelecomF.Views.Inscription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlgerieTelecomF.Views"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="704" d:DesignWidth="1017">
+    <Border CornerRadius="0 20 20 0" Background="#FFDBE3F3" >
+
+        <Grid Margin="7 7 7 7">
+            <Border Background="White" BorderThickness="1" BorderBrush="#FFD7D5D5"  CornerRadius="20"  HorizontalAlignment="Left" Height="350" Margin="0,10,0,0" VerticalAlignment="Top" Width="738">
+
+                <Grid Margin="7 7 7 7">
+
+                    <materialDesign:PackIcon Kind="User" Height="40" Width="54">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00d2ff "/>
+                                <GradientStop Color="#3a47d5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Peronel Information" Foreground="#FF2198F2" FontSize="20" Margin="52,8,304,288"/>
+                    <TextBox FontSize="15"  FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="First Name" materialDesign:HintAssist.Foreground="#FF0B71E9" materialDesign:HintAssist.Background="White" Margin="0,53,497,233" HorizontalAlignment="Right" Width="212"   />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Last Name" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,53,234,233" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Birthday" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,122,497,164" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Resident" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,122,234,164" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="ID Card" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,199,497,87" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Date Release Card" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,199,234,87" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="E-mail" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,269,497,17" HorizontalAlignment="Right" Width="212"  />
+                    <TextBox FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Phone" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,269,234,17" HorizontalAlignment="Right" Width="212"  />
+                    <Button Margin="567,46,37,138" Height="150" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/888372_man_512x512.png"/>
+                        </Button.Background>
+
+                    </Button>
+
+                </Grid>
+
+
+
+            </Border>
+            <Border BorderThickness="1" BorderBrush="#FFD7D5D5" Background="White" CornerRadius="20"  HorizontalAlignment="Left" Height="350" Margin="743,10,0,0" VerticalAlignment="Top" Width="260">
+
+                <Grid Margin="7,7,7,7">
+                    <TextBlock Text="Telephone" Foreground="#FF2198F2" FontSize="20" Margin="63,8,77,295"/>
+                    <materialDesign:PackIcon Kind="PhoneClassic" Height="40" Width="54" Margin="0,0,0,0">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00d2ff "/>
+                                <GradientStop Color="#3a47d5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+
+                    <Button Margin="15,53,0,249" Style="{DynamicResource MaterialDesignRaisedSecondaryDarkButton}" Background="#FF2198F2" BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="47">
+                        <materialDesign:PackIcon Kind="MobilePhoneText"/>
+
+                    </Button>
+                    <Label Content="033394456" FontSize="12.5" VerticalContentAlignment="Center" Padding="30,0,0,0" Margin="101,53,0,250" Background="#FFE7E7F4" HorizontalAlignment="Left" Width="123"/>
+                    <StackPanel Orientation="Vertical" Margin="0,90,0,0">
+                        <Label Content="Service" FontSize="20" FontWeight="DemiBold" Foreground="#FF2198F2" Height="38"/>
+                        <CheckBox  Style="{StaticResource CheckBoxStyle2}" VerticalContentAlignment="Center"  FontSize="12"  Content="Number Display" Margin="8,3,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <CheckBox Style="{StaticResource CheckBoxStyle2}"  FontSize="12"  Content="call waiting" Margin="8,0,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <CheckBox Style="{StaticResource CheckBoxStyle2}"  FontSize="12"  Content="Teleconference" Margin="8,0,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <CheckBox Style="{StaticResource CheckBoxStyle2}"  FontSize="12"  Content="temporary dismissal" Margin="8,0,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <CheckBox Style="{StaticResource CheckBoxStyle2}"  FontSize="12"  Content="Call without request" Margin="8,0,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <CheckBox Style="{StaticResource CheckBoxStyle2}"  FontSize="12"  Content="abbreviated dialing" Margin="8,0,0,10" Width="157">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                    </StackPanel>
+
+                </Grid>
+
+
+
+
+            </Border>
+
+
+            <Border  BorderThickness="1" BorderBrush="#FFD7D5D5" Background="White" CornerRadius="20"   HorizontalAlignment="Center" Height="320" Margin="0,368,0,0" VerticalAlignment="Top" Width="1002">
+                <StackPanel>
+                    <Grid x:Name="Selectedgrid" Visibility="Visible" Margin="1,10,7,7">
+                        <Button x:Name="btn" Style="{DynamicResource ButtonStyle1}"   HorizontalAlignment="Left" Height="300" Margin="10,0,0,0" VerticalAlignment="Center" Width="472" BorderBrush="{x:Null}" Click="select" >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#00d2ff "/>
+                                    <GradientStop Color="#3a47d5" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <StackPanel Height="264" Width="321">
+                                <TextBlock Text="Idoom Adsl" FontSize="45" Margin="0,10,0,0" Padding="0,0,25,0"  TextAlignment="Center"/>
+                                <materialDesign:PackIcon Kind="Ethernet" Margin="105,10,0,0" Foreground="White" Height="100" Width="100"/>
+                                <TextBlock Text="Fibre  And Adsl" FontSize="40" Margin="10,20,0,0"/>
+                            </StackPanel>
+
+                        </Button>
+                        <Button Margin="519,0,0,0" Style="{DynamicResource ButtonStyle1}"  HorizontalAlignment="Left" Height="300" VerticalAlignment="Center" Width="472" BorderBrush="{x:Null}">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#00d2ff " Offset="1"/>
+                                    <GradientStop Color="#3a47d5" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <StackPanel Height="264" Width="321">
+                                <TextBlock Text="Idoom 4G" FontSize="45" Margin="0,10,0,0" Padding="0,0,25,0"  TextAlignment="Center"/>
+                                <materialDesign:PackIcon Kind="Signal4g" Margin="105,10,0,0" Foreground="White" Height="96" Width="100"/>
+                                <TextBlock Text="LTE" FontSize="40" Margin="125,20,0,0"/>
+                            </StackPanel>
+                        </Button>
+
+
+                    </Grid>
+
+
+
+                    <Grid x:Name="ofrinscription" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="695*"/>
+                            <ColumnDefinition Width="306*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="38"/>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+                        <Button Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="27"  Margin="10,6,0,0" Width="32" Click="previous">
+                            <materialDesign:PackIcon Kind="ArrowBack" />
+                        </Button>
+                        <Grid x:Name="grdoffre"  Grid.Column="0" Grid.Row="1">
+
+
+                        </Grid>
+
+                        <Grid x:Name="grdconvention" Grid.Column="1" Grid.Row="1">
+                            <ListView Margin="27,0,23,0" x:Name="lstvwconv">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="20" Height="40" Width="245" Margin="0,0,0,0">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FF7786E6"/>
+                                                    <GradientStop Color="#FF1746FD" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <TextBlock Text="{Binding Name}" FontSize="15" Foreground="White" Margin="0,10,0,0" TextAlignment="Center" Background="{x:Null}" ></TextBlock>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+
+                        </Grid>
+
+
+
+                    </Grid>
+
+
+
+                </StackPanel>
+            </Border>
+
+
+
+        </Grid>
+    </Border>
+</UserControl>
