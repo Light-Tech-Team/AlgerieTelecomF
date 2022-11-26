@@ -22,9 +22,13 @@ namespace AlgerieTelecomF.UserControls
     /// </summary>
     public partial class offers : UserControl
     {
-        public bool IsSelectedActive;
-        
-            public offers(string name, string type, float price)
+        public bool Ischecked;
+        public string Nameo;
+        public string Typeo;
+       // public float Priceo;
+
+
+        public offers(string name, string type, float price)
             {
 
                 InitializeComponent();
@@ -32,37 +36,28 @@ namespace AlgerieTelecomF.UserControls
                 Name.Text = name;
                 Speed.Text = type;
                 Price.Text = price.ToString();
-                IsSelectedActive = false;
-
+               
             }
 
-            public List<offers> GetOffers()
-            {
-
-
-                return new List<offers>()
-            {
-
-                new offers ("iddom","4.8Mbp/s",1620),
-                new offers ("iddom","4.8Mbp/s",1620),
-                new offers ("iddom","4.8Mbp/s",1620),
-                new offers ("iddom","4.8Mbp/s",1620),
-
-                };
-
-            }
+          
 
         private void Brd_Click(object sender, RoutedEventArgs e)
         {
-            if(IsSelectedActive == true)
-            {
+            Nameo = Name.Text;
+            Typeo = Speed.Text;
+           // Priceo = float.Parse(Price.Text);
 
+            if(chkbx.Visibility == Visibility.Collapsed)
+            {
+                chkbx.Visibility = Visibility.Visible;
+                chkbx.IsChecked = true;
+                Ischecked = true;
 
             }
             else
-            {
-
-
+              {
+                chkbx.Visibility = Visibility.Collapsed;
+                Ischecked = false;
             }
         }
     }

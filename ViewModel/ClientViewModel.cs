@@ -8,18 +8,20 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AlgerieTelecomF.Models;
+using System.Net.Http;
 
 namespace AlgerieTelecomF.ViewModel
 {
-    internal class ClientViewModel 
+    public class ClientViewModel 
 
     {
+        HttpClient htp = new HttpClient(); 
 
-        ClientModelcs modelcs = new ClientModelcs();
-        public ClientEntity entities = new ClientEntity();
+        public ClientModelcs modelcs = new ClientModelcs();
+        
 
-        List<ClientModelcs> listmodel = new List<ClientModelcs>();
-        List<ClientEntity> listentities = new List<ClientEntity>();
+       public List<ClientModelcs> listmodel = new List<ClientModelcs>();
+       public  List<ClientEntity> listentities = new List<ClientEntity>();
 
 
 
@@ -27,67 +29,66 @@ namespace AlgerieTelecomF.ViewModel
         public ClientViewModel()
         {
             //  فلاسك = ent http
-            entities.code = 1;
-            entities.firstName="ZAKARIA";
-            entities.lastName="basbas";
-            entities.birthDay=new DateTime(1998,02,25);
-            entities.cardId=230214565;
-            entities.cardDate = new DateTime(2016,04,14); 
-            entities.phone = 0665651107;
+            
+
+           //string sr = new string();
+
+        // sr=htp.GetAsync("127.1.1.0//");
+
+
 
 
          }
-        public List<ClientModelcs> listPhone()
+     
+
+
+
+        public ClientModelcs GetClient(int Code)
         {
-            
-                listmodel.Add(new ClientModelcs() { Phone = 33394355  });
-                listmodel.Add(new ClientModelcs() { Phone = 33394506 });
-                listmodel.Add(new ClientModelcs() { Phone = 33394355 });
-                listmodel.Add(new ClientModelcs() { Phone = 33394355 });
-            
+            modelcs.FirstName = Clients.firstName;
+            modelcs.Email = Clients.email;
+            modelcs.Phone = Clients.phone;
+            modelcs.BirthDay = Clients.birthDay;
+            modelcs.CardDate = Clients.cardDate;
 
-
-
-            return listmodel;
-        }
-
-
-
-        public ClientModelcs models()
-        {
-          modelcs.Code = entities.code;
-            modelcs.FirstName = entities.firstName  ;
-            modelcs.LastName = entities.lastName  ;
-            modelcs.BirthDay = entities.birthDay ;
-            modelcs.CardId = entities.cardId ;
-            modelcs.CardDate = entities.cardDate  ;
-           modelcs.Phone =  entities.phone;
-           
             return modelcs;
         }
        
 
 
-        public void Updateclient(ClientModelcs modelcs)
+        public void Updateclient()
         {
 
-             entities.code = modelcs.Code;
-             entities.firstName = modelcs.FirstName;
-             entities.lastName = modelcs.LastName;
-             entities.birthDay = modelcs.BirthDay;
-             entities.cardId = modelcs.CardId;
-             entities.cardDate = modelcs.CardDate;
-             entities.phone = modelcs.Phone;
+            modelcs.FirstName = Clients.firstName;
+            modelcs.Email = Clients.email;
+            modelcs.BirthDay = Clients.birthDay;
+            modelcs.Phone = Clients.phone;
+            modelcs.CardDate = Clients.cardDate;
+            modelcs.CardId = Clients.cardId;
 
 
         }
 
 
 
-        public void DeleteNumber(int i)
-        { }
+        public void DeleteNumber(int phone)
+        { 
+        
+        }
 
+        public ClientModelcs setClient()
+        {
+           
+            modelcs.FirstName = Clients.firstName;
+           
+            modelcs.BirthDay = Clients.birthDay;
+            modelcs.CardId = Clients.cardId;
+            modelcs.CardDate = Clients.cardDate;
+            modelcs.Phone = Clients.phone;
 
+            return modelcs ;
+
+        }
 
     }
 }

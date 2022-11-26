@@ -7,20 +7,22 @@
              xmlns:uc="clr-namespace:AlgerieTelecomF.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="990">
+   
     <Border CornerRadius="20,20,20,20" Background="White" >
+        
         <Grid>
-            <ScrollViewer Visibility="Visible" x:Name="scrl" Margin="7,7,7,7" HorizontalScrollBarVisibility="Visible" CanContentScroll="True">
+            <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Visible">
+                <Grid>
+            <ListView Visibility="Visible" x:Name="scrl" Margin="7,7,7,71"  >
 
 
-                <StackPanel Width="970">
-                    <ItemsControl x:Name="itemsoffermain" >
+                    <ItemsControl x:Name="itemsoffermain" Selector.IsSelected="True" >
                         <ItemsControl.ItemTemplate>
-
                             <DataTemplate>
-                               
-                            </DataTemplate>
-
+                           
+                        </DataTemplate>
                         </ItemsControl.ItemTemplate>
+
 
                         <ItemsControl.ItemsPanel>
 
@@ -32,14 +34,16 @@
                         </ItemsControl.ItemsPanel>
 
 
+
                     </ItemsControl>
 
-                </StackPanel>
 
-
+            </ListView>
+                    <Button Content="Set Offre" Margin="824,260,11,28" Click="Button_Click"/>
+                </Grid>
             </ScrollViewer>
-
         </Grid>
+       
     </Border>
-
+    
 </UserControl>

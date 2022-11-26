@@ -1,0 +1,97 @@
+﻿<Window x:Class="AlgerieTelecomF.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlgerieTelecomF"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" x:Name="lgwd" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Height="310" Width="567"
+        WindowStartupLocation="CenterScreen">
+    <Border x:Name="brd" CornerRadius="25,25,25,25" MouseLeftButtonDown="Border_DragEnter" Margin="0,0,10,10">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF6EAAE8" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="22" Margin="525,4,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource ButtonStyle1}" Click="exit">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0A2E8C"/>
+                        <GradientStop Color="#FF2A70AE" Offset="0.8"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+
+
+
+
+            </Button>
+            <ComboBox HorizontalAlignment="Left" SelectedValue="1" Height="38" Margin="226,58,0,0" VerticalAlignment="Top" Width="188" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Administrator" Selected="ComboBox_Selected"></ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Agent" Selected="ComboBox_Selected"></ComboBoxItem>
+            </ComboBox>
+            <TextBox HorizontalAlignment="Left" Height="32" Margin="226,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217"/>
+            <TextBox HorizontalAlignment="Left" Height="31" Margin="226,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218"/>
+            <StackPanel Orientation="Horizontal" Margin="117,65,336,204">
+                <materialDesign:PackIcon Kind="User" Height="30" Width="30" >
+                    <materialDesign:PackIcon.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#00d2ff "/>
+                            <GradientStop Color="#3a47d5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:PackIcon.Foreground>
+                </materialDesign:PackIcon>
+                <TextBlock Text="Type" TextAlignment="Center" Padding="10,5,0,0" FontSize="15"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="93,131,342,138">
+                <materialDesign:PackIcon Kind="UserBadge" Height="30" Width="30" >
+                    <materialDesign:PackIcon.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#00d2ff "/>
+                            <GradientStop Color="#3a47d5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:PackIcon.Foreground>
+                </materialDesign:PackIcon>
+                <TextBlock Text="Username" TextAlignment="Center" Padding="10,5,0,0" FontSize="15" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="93,188,346,81">
+                <materialDesign:PackIcon Kind="FormTextboxPassword" Height="30" Width="30" >
+                    <materialDesign:PackIcon.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#00d2ff "/>
+                            <GradientStop Color="#3a47d5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:PackIcon.Foreground>
+                </materialDesign:PackIcon>
+                <TextBlock Text="Password" TextAlignment="Center" Padding="10,5,0,0" FontSize="15"/>
+            </StackPanel>
+            <Label Content="Login" FontSize="30" HorizontalAlignment="Left" Height="50" Margin="240,5,0,0" VerticalAlignment="Top" Width="109">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#00d2ff " Offset="1"/>
+                        <GradientStop Color="#3a47d5" />
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Button Content="Login" HorizontalAlignment="Left" Height="38" 
+                    Margin="198,248,0,0" VerticalAlignment="Top" Width="198" Style="{StaticResource ButtonStyle1}"
+                    Background="{x:Null}" BorderThickness="2" Click="Button_Click">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0A2E8C"/>
+                        <GradientStop Color="#FF2A70AE" Offset="0.8"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#00d2ff "/>
+                        <GradientStop Color="#3a47d5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

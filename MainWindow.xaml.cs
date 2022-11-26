@@ -22,6 +22,8 @@ namespace AlgerieTelecomF
     /// </summary>
     public partial class MainWindow : Window
     {
+        string state;
+        string user;
         public MainWindow()
         {
             InitializeComponent();
@@ -81,7 +83,7 @@ namespace AlgerieTelecomF
                 case "Offre":
                     Frm.Content = new Promotion();
                     break;
-               
+
                 case "Client":
                     Frm.Content = new Client();
                     break;
@@ -93,6 +95,58 @@ namespace AlgerieTelecomF
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+      
+
+
+
+
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            wnd.Close();
+        }
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cbxitm = new ComboBoxItem();
+            cbxitm = sender as ComboBoxItem;
+
+            state = cbxitm.Content.ToString();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            switch (state)
+            {
+                case "Administrator":
+                    LoginBorder.Visibility = Visibility.Collapsed;
+                    MainBorder.Visibility = Visibility.Visible;
+                    Subscribe.Visibility = Visibility.Collapsed;
+                    
+                    Frm.Content = new Promotion();
+
+                    break;
+
+                case "Agent":
+                    LoginBorder.Visibility = Visibility.Collapsed;
+                    MainBorder.Visibility = Visibility.Visible;
+                    Offre.Visibility = Visibility.Collapsed;
+                    Frm.Content = new Inscription();
+                    break;
+
+
+
+
+
+            }
+            usernameup.Text = state;
+            usernameupname.Text = Username.Text;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            wnd.Close();
         }
     }
 }

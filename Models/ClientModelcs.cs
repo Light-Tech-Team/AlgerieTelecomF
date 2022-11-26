@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace AlgerieTelecomF.Models
 {
-    public class ClientModelcs : Clients, INotifyPropertyChanged
+    public  class ClientModelcs : Clients, INotifyPropertyChanged
        
     
  
@@ -20,7 +20,7 @@ namespace AlgerieTelecomF.Models
     
 
     {
-       public int Code
+       public  int Code
     {
             get { return code; }
 

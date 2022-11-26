@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgerieTelecomF.Entity
 {
-    internal class ClientEntity:Clients
+    public class ClientEntity:Clients
     {
       
     }

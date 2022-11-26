@@ -9,14 +9,14 @@ namespace AlgerieTelecomF
 {
     public class History 
     {
-        public int id;
-        public DateTime date;
-        public string offrenameh;
-        public string offretypeh;
-        public string agreementname;
-        public int principaleline;
-        public string resident;
-        public int serviceline;
+        public static int id;
+        public static DateTime date;
+        public static string offrenameh;
+        public static string offretypeh;
+        public static string agreementname;
+        public static int principaleline;
+        public static string resident;
+        public static string serviceline;
 
       
 

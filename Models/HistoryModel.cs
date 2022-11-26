@@ -61,7 +61,7 @@ namespace AlgerieTelecomF.Models
         }
 
         
-        public int Serviceline
+        public string Serviceline
         {
             get { return         serviceline; }
             set { serviceline = value; }

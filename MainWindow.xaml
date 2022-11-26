@@ -11,93 +11,185 @@
          Title="MainWindow" Height="810" Width="1250"
         ResizeMode="CanResize" WindowStyle="None"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent"
-        x:Name="wnd">
-    <Border CornerRadius="20 20 20 20" Background="Azure" BorderBrush="#FF1B90D2" BorderThickness="3" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown" Loaded="Border_Loaded" >
-        <Grid x:Name="Grd">
-            <Grid.ColumnDefinitions>
+        x:Name="wnd" >
+    <Grid>
+        <Border x:Name="MainBorder" Visibility="Collapsed" CornerRadius="20 20 20 20" Background="Azure" BorderBrush="#FF1B90D2" BorderThickness="3" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown" Loaded="Border_Loaded" >
+            <Grid x:Name="Grd">
+                <Grid.ColumnDefinitions>
 
-                <ColumnDefinition Width ="227" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Border Background="#FF2097F1" Margin="0,0,0,707" Grid.RowSpan="2" Grid.ColumnSpan="2" CornerRadius="20 20 0 20">
-                <Grid Background="#FF2097F1" Margin="0,3,10,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="872*"/>
-                        <ColumnDefinition Width="231*"/>
-                        <ColumnDefinition Width="131*"/>
-                    </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="User" Foreground="White" FontSize="50" Height="45"  Width="36" Margin="35,3,0,0" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Height="34" Margin="87,5,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="149" FontSize="26" Foreground="White" Grid.Column="1" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Height="34" Margin="307,5,0,0" TextWrapping="Wrap" Text="Agence Barika" VerticalAlignment="Top" Width="256" FontSize="25" Foreground="White"/>
+                    <ColumnDefinition Width ="227" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Background="#FF2097F1" Margin="0,0,0,707" Grid.RowSpan="2" Grid.ColumnSpan="2" CornerRadius="20 20 0 20">
+                    <Grid Background="#FF2097F1" Margin="0,3,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="872*"/>
+                            <ColumnDefinition Width="231*"/>
+                            <ColumnDefinition Width="131*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="User" Foreground="White" FontSize="50" Height="45"  Width="36" Margin="35,3,0,0" Grid.Column="1"/>
+                        <TextBlock x:Name="usernameup" HorizontalAlignment="Left" Height="34" Margin="87,5,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="149" FontSize="24" Foreground="White" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        <TextBlock HorizontalAlignment="Left" Height="34" Margin="307,5,0,0" TextWrapping="Wrap" Text="Agence Barika" VerticalAlignment="Top" Width="256" FontSize="25" Foreground="White"/>
+                        <TextBlock x:Name="usernameupname" HorizontalAlignment="Left" Height="34" Margin="87,40,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="149" FontSize="20" Foreground="White" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                </Grid>
-            </Border>
-            <Border x:Name="SideBar" CornerRadius="20 80 20 20"  Grid.RowSpan="2" Background="White" Margin="0,0,0,0"  >
+                    </Grid>
+                </Border>
+                <Border x:Name="SideBar" CornerRadius="20 80 20 20"  Grid.RowSpan="2" Background="White" Margin="0,0,0,0"  >
 
-                <Grid>
-                    <Image Source="Logo_Algérie_Télécom.svg.png" VerticalAlignment="Top" Height="91" Margin="36,26,61,0" />
-                    <Separator Height="8" Margin="10,122,31,0" VerticalAlignment="Top" Background="#FFC5C5C5"/>
-                    <Border CornerRadius="20" Margin="10,177,10,152" Background="White">
-                        <StackPanel Orientation="Vertical" Margin="0,24,0,0"   >
-                            <ListView  Height="362" Width="241"  >
-                                <ListViewItem Name="Subscribe" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
+                    <Grid>
+                        <Image Source="Logo_Algérie_Télécom.svg.png" VerticalAlignment="Top" Height="91" Margin="36,26,61,0" />
+                        <Separator Height="8" Margin="10,122,31,0" VerticalAlignment="Top" Background="#FFC5C5C5"/>
+                        <Border CornerRadius="20" Margin="10,177,10,152" Background="White">
+                            <StackPanel Orientation="Vertical" Margin="0,24,0,0"   >
+                                <ListView  Height="362" Width="241"  >
+                                    <ListViewItem Name="Subscribe" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
 
-                                    <StackPanel Orientation="Horizontal" Height="55">
-                                        <materialDesign:PackIcon Kind="AccountPlusOutline" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
-                                        <TextBlock Text="Subscribe" Width="155" TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
-                                    </StackPanel>
-                                </ListViewItem>
+                                        <StackPanel Orientation="Horizontal" Height="55">
+                                            <materialDesign:PackIcon Kind="AccountPlusOutline" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
+                                            <TextBlock Text="Subscribe" Width="155" TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
+                                        </StackPanel>
+                                    </ListViewItem>
 
-                                <ListViewItem Name="Offre" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
+                                    <ListViewItem Name="Offre" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
 
-                                    <StackPanel Orientation="Horizontal" Height="55">
-                                        <materialDesign:PackIcon Kind="Offer" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
-                                        <TextBlock Text="offre" Width="124"  TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
-                                    </StackPanel>
-                                </ListViewItem>
-
-
-                                <ListViewItem Name="Client" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
-
-                                    <StackPanel Orientation="Horizontal" Height="55">
-                                        <materialDesign:PackIcon Kind="UserGroupOutline" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
-                                        <TextBlock Text="Client" Width="126" TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
-                                    </StackPanel>
-                                </ListViewItem>
+                                        <StackPanel Orientation="Horizontal" Height="55">
+                                            <materialDesign:PackIcon Kind="Offer" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
+                                            <TextBlock Text="offre" Width="124"  TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
+                                        </StackPanel>
+                                    </ListViewItem>
 
 
+                                    <ListViewItem Name="Client" Style="{DynamicResource ListViewItemStyle1}" Width="230" Selected="Call" Margin="0,0,0,0" >
 
-                            </ListView>
-
-                        </StackPanel>
-
-                    </Border>
-                    <Button Style="{DynamicResource GridEditButton}" Margin="10,676,156,0" Background="White" Foreground="#FF2198F2" BorderBrush="White" VerticalAlignment="Top">
-                        <Grid>
-                        <materialDesign:PackIcon Kind="ExitToApp" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
-                            <TextBlock Text="Exit" Height="45" Margin="35,0,-134,0" FontSize="17" TextAlignment="Center" Padding="0,10,8,0"/>
-                        </Grid>
-                    </Button>
-
-                </Grid>
+                                        <StackPanel Orientation="Horizontal" Height="55">
+                                            <materialDesign:PackIcon Kind="UserGroupOutline" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31"/>
+                                            <TextBlock Text="Client" Width="126" TextAlignment="Center" Height="34" FontSize="17" Foreground="#FF2198F2"/>
+                                        </StackPanel>
+                                    </ListViewItem>
 
 
 
+                                </ListView>
 
-            </Border>
-            <Border x:Name="Brd"  Background="#FFEFF3F6" BorderThickness="0" Grid.RowSpan="2" Grid.Column="1"   CornerRadius="0 20 20 0" Margin="0,97,0,0" Grid.ColumnSpan="1">
-                <Frame x:Name="Frm" NavigationUIVisibility="Hidden" Grid.RowSpan="2"   />
-            </Border>
+                            </StackPanel>
+
+                        </Border>
+                        <Button Style="{StaticResource ButtonStyle1}" Margin="10,687,10,0"  Background="White" Foreground="#FF2198F2" BorderBrush="{x:Null}" VerticalAlignment="Top" Click="Button_Click_1" Height="50">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ExitToApp" Foreground="#FF2198F2" FontSize="50" Height="41"  Width="31" Margin="-55,0,0,0"/>
+                                <TextBlock Text="Exit" Height="45" Margin="20,0,0,0" FontSize="17" TextAlignment="Center" Padding="0,10,8,0"/>
+                            </StackPanel>
+                        </Button>
+
+                    </Grid>
 
 
 
 
-        </Grid>
-    </Border>
+                </Border>
+                <Border x:Name="Brd"  Background="#FFEFF3F6" BorderThickness="0" Grid.RowSpan="2" Grid.Column="1"   CornerRadius="0 20 20 0" Margin="0,97,0,0" Grid.ColumnSpan="1">
+                    <Frame x:Name="Frm" NavigationUIVisibility="Hidden" Grid.RowSpan="2"   />
+                </Border>
+
+
+
+
+
+            </Grid>
+        </Border>
+
+        <Border x:Name="LoginBorder" CornerRadius="25,25,25,25"  Margin="397,254,301,254">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF6EAAE8" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="22" Margin="525,4,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource ButtonStyle1}" Click="exit">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF0A2E8C"/>
+                            <GradientStop Color="#FF2A70AE" Offset="0.8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+
+
+
+
+
+                </Button>
+                <ComboBox HorizontalAlignment="Left" SelectedValue="1" Height="38" Margin="226,58,0,0" VerticalAlignment="Top" Width="188" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                    <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Administrator" Selected="ComboBox_Selected"></ComboBoxItem>
+                    <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Agent" Selected="ComboBox_Selected"></ComboBoxItem>
+                </ComboBox>
+                <TextBox x:Name="Username" HorizontalAlignment="Left" Height="32" Margin="226,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="217"/>
+                <TextBox HorizontalAlignment="Left" Height="31" Margin="226,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218"/>
+                <StackPanel Orientation="Horizontal" Margin="117,65,336,204">
+                    <materialDesign:PackIcon Kind="User" Height="30" Width="30" >
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00d2ff "/>
+                                <GradientStop Color="#3a47d5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Type" TextAlignment="Center" Padding="10,5,0,0" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="93,131,342,138">
+                    <materialDesign:PackIcon Kind="UserBadge" Height="30" Width="30" >
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00d2ff "/>
+                                <GradientStop Color="#3a47d5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Username" TextAlignment="Center" Padding="10,5,0,0" FontSize="15" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="93,188,346,81">
+                    <materialDesign:PackIcon Kind="FormTextboxPassword" Height="30" Width="30" >
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00d2ff "/>
+                                <GradientStop Color="#3a47d5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Password" TextAlignment="Center" Padding="10,5,0,0" FontSize="15"/>
+                </StackPanel>
+                <Label Content="Login" FontSize="30" HorizontalAlignment="Left" Height="50" Margin="240,5,0,0" VerticalAlignment="Top" Width="109">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#00d2ff " Offset="1"/>
+                            <GradientStop Color="#3a47d5" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Button Content="Login" HorizontalAlignment="Left" Height="38" 
+                    Margin="198,248,0,0" VerticalAlignment="Top" Width="198" Style="{StaticResource ButtonStyle1}"
+                    Background="{x:Null}" BorderThickness="2" Click="Button_Click">
+                    <Button.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF0A2E8C"/>
+                            <GradientStop Color="#FF2A70AE" Offset="0.8"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#00d2ff "/>
+                            <GradientStop Color="#3a47d5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
 
 
 </Window>

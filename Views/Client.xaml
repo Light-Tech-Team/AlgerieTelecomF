@@ -48,54 +48,40 @@
                     <DataGridTextColumn Header="Agreement" IsReadOnly="True" Width="*" Binding="{Binding Agreementname}"/>
                     <DataGridTextColumn Header="line" IsReadOnly="True" Width="*" Binding="{Binding Numberline}"/>
                     <DataGridTextColumn Header="Resident" IsReadOnly="True" Width="*" Binding="{Binding Resident}"/>
-                    <DataGridTextColumn Header="Idtr" IsReadOnly="True" Width="*" Binding="{Binding Idtransform}"/>
                     <DataGridTextColumn Header="Date" IsReadOnly="True" Width="*" Binding="{Binding Idcession}"/>
 
 
-                    <DataGridTemplateColumn Width="auto">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource GridEditButton}" >
-                                        <iconPacks:PackIconMaterial Kind="PencilOffOutline" Style="{StaticResource GridButtonIcon}"/>
-                                    </Button>
-                                    <Button Style="{StaticResource GridRemoveButton}" Margin="2,0,0,0" >
-                                        <iconPacks:PackIconMaterial Kind="PencilOffOutline" Style="{StaticResource GridButtonIcon}"/>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+
                 </DataGrid.Columns>
 
             </DataGrid>
             <Grid x:Name="psnlinfo"  DataContext="{Binding Model}"  Margin="9,20,6,500">
 
 
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0"   FontSize="20" HorizontalAlignment="Left" Height="34" Margin="145,39,0,0" TextWrapping="Wrap" Text="{Binding Path= FirstName}" VerticalAlignment="Top" Width="162" SelectionBrush="#FF020202"/>
+                <TextBox x:Name="FullName"  BorderThickness="0"   FontSize="20" HorizontalAlignment="Left" Height="34" Margin="145,39,0,0"  Text="{Binding Path= FirstName}" VerticalAlignment="Top" Width="162" SelectionBrush="#FF020202"/>
 
 
                 <materialDesign:PackIcon Kind="IdentificationCard" Margin="143,76,0,0"/>
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,76,0,0" TextWrapping="Wrap" Text="{Binding CardId}" VerticalAlignment="Top" Width="119"/>
+                <TextBox x:Name="IdCard"  BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,76,0,0"  Text="{Binding CardId}" VerticalAlignment="Top" Width="119"/>
 
                 <materialDesign:PackIcon Kind="DateRange" Margin="284,76,0,0"/>
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="301,76,0,0" TextWrapping="Wrap" Text="{Binding CardDate}" VerticalAlignment="Top" Width="152"/>
+                <TextBox x:Name="DateReleaseCard"  BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="301,76,0,0"  Text="{Binding CardDate}" VerticalAlignment="Top" Width="152"/>
 
                 <materialDesign:PackIcon Kind="Email" Margin="143,100,0,0"/>
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,100,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="162"/>
+                <TextBox x:Name="Mail"  BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,100,0,0" Text="{Binding Email}" VerticalAlignment="Top" Width="162"/>
 
                 <materialDesign:PackIcon Kind="Baby" Margin="143,124,0,0"/>
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,124,0,0" TextWrapping="Wrap" Text="{Binding BirthDay}" VerticalAlignment="Top" Width="152"/>
+                <TextBox x:Name="birthday"  BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="165,124,0,0" Text="{Binding BirthDay}" VerticalAlignment="Top" Width="152"/>
 
 
                 <materialDesign:PackIcon Kind="Phone" Margin="143,148,0,0"/>
-                <TextBox IsReadOnly="{Binding TxtChange}" BorderThickness="0" HorizontalAlignment="Left" Height="24" Margin="165,148,0,0" TextWrapping="Wrap" Text="{Binding Phone}" VerticalAlignment="Top" Width="162"/>
+                <TextBox x:Name="phonee"  BorderThickness="0" HorizontalAlignment="Left" Height="24" Margin="165,148,0,0"  Text="{Binding Phone}" VerticalAlignment="Top" Width="162"/>
 
-                <Image Source="721568.jpg"  HorizontalAlignment="Left" Height="119" Margin="20,51,0,0" VerticalAlignment="Top" Width="89"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="806,40,0,0" TextWrapping="Wrap" Text="Search by Phone" VerticalAlignment="Top" Width="170"/>
+                <materialDesign:PackIcon Kind="Account" Foreground="Blue" HorizontalAlignment="Left" Height="119" Margin="20,51,0,0" VerticalAlignment="Top" Width="89"/>
+                <TextBox x:Name="TxtIdClient" HorizontalAlignment="Left" Height="23" Margin="806,40,0,0"  Text="0000001" VerticalAlignment="Top" Width="170" />
 
 
-                <Button Name="edit" Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left"  Margin="363,45,0,0" VerticalAlignment="Top" Click="Button_Click" >
+                <Button Name="edit" Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left"  Margin="363,45,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#FF185AE9" >
                     <materialDesign:PackIcon Kind="PencilAddOutline" Foreground="White"  />
                 </Button>
 
@@ -110,8 +96,8 @@
 
             </Grid>
             <Grid x:Name="changegrid" Margin="0,195,0,364">
-                <ComboBox  SelectedItem="0"  ItemsSource="{Binding Path=lstofr}"  x:Name="combo" Margin="48,46,775,0" VerticalAlignment="Top" Height="32" Background="#00c1ff" Foreground="Black"
-                          Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                <ComboBox   ItemsSource="{Binding Path=lstofr}"  x:Name="combo" Margin="48,46,775,0" VerticalAlignment="Top" Height="32" Background="#FF512DA8" Foreground="Black"
+                          Style="{StaticResource ComboBoxStyle1}" SelectionChanged="combo_Selected_1" 
                           >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -129,19 +115,15 @@
 
 
                 </ComboBox>
-                <ComboBox x:Name="combophone" ItemsSource="{Binding Path=lstphone}" Margin="818,-102,24,0" Background="#FF185AE9" BorderBrush="#FF185AE9" Style="{DynamicResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Top" Height="33">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock x:Name="txt" Text="{Binding Phone}"/>
+                <ComboBox x:Name="combophone" SelectedIndex="0" Margin="818,-102,24,0"  Background="#FF00C1FF" BorderBrush="#FF185AE9"
+                          Style="{DynamicResource ComboBoxStyle1}"
+                          VerticalAlignment="Top" Height="33" SelectionChanged="combophone_SelectionChanged">
 
-
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBox x:Name="txtresident"  Margin="687,46,95,53" Background="#00c1ff" />
+                <TextBox x:Name="txtresident"  Margin="687,46,95,53" Background="#FF00C1FF" />
                 <ComboBox x:Name="comboagr" ItemsSource="{Binding Path=lstagr}"   Margin="271,46,559,0" VerticalAlignment="Top" Height="32"
-                          Background="#00c1ff" Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                          Background="#FF512DA8" Style="{DynamicResource ComboBoxStyle1}" SelectionChanged="comboagr_SelectionChanged" 
                          >
 
                     <ComboBox.ItemTemplate >
@@ -157,21 +139,20 @@
 
                 </ComboBox>
                 <Menu HorizontalAlignment="Left"  Margin="481,46,0,0" VerticalAlignment="Top"  Background="#00c1ff">
-                    <MenuItem Height="32" Width="180" Header="03394355"   Padding="58,0,-20,0" Click="MenuItem_Click"  >
-                        <MenuItem Header="Cancel" Icon="{materialDesign:PackIcon Kind=Close}" >
+                    <MenuItem x:Name="menuphone" Height="32" Width="180"   Padding="58,0,-20,0" Click="MenuItem_Click" Background="#FF00C1FF"  >
+                        <MenuItem Header="Cancel" Icon="{materialDesign:PackIcon Kind=Close}" Click="Cancel_Line" >
 
                         </MenuItem>
-                        <MenuItem Header="Cession" Icon="{materialDesign:PackIcon Kind=Exchange}">
+                        <MenuItem Header="Cession" Icon="{materialDesign:PackIcon Kind=Exchange}" Click="Cession_Line">
 
                         </MenuItem>
                     </MenuItem>
 
                 </Menu>
 
-                <Button  x:Name="ok_Copy" Visibility="Visible" Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left"  Margin="918,46,0,0" VerticalAlignment="Top" Click="edit_Copy_Click" Width="61" >
+                <Button  x:Name="ok_Copy" Visibility="Visible" Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left"  Margin="918,46,0,0" VerticalAlignment="Top" Click="edit_Copy_Click" Width="61" Background="#FF185AE9" >
                     <materialDesign:PackIcon Kind="Done" Foreground="White"  />
                 </Button>
-                <TextBlock x:Name="txt" HorizontalAlignment="Left" Height="31" Margin="571,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="174" Background="#FF9DACCF"/>
 
 
 
@@ -181,6 +162,152 @@
 
             </Grid>
 
+            <Border x:Name="CessionBorder" Visibility="Collapsed" CornerRadius="20" BorderThickness="2"  Background="White" Margin="232,209,266,189" MouseDown="CessionBorder_MouseDown">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#00d2ff "/>
+                        <GradientStop Color="#3a47d5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Grid Margin="7 7 7 7" >
+
+                    <Grid x:Name="prsnlinfo" Visibility="Visible">
+                        <Separator Margin="247,49,0,212" Background="#FF306DCE"/>
+                        <TextBlock Text="Exist" Margin="14,6,404,246" FontSize="18" Foreground="#FF306DCE"/>
+                        <TextBox Margin="60,2,310,250" Foreground="#FF306DCE"/>
+
+                        <materialDesign:PackIcon Kind="User" Height="40" Width="54" Margin="0,32,0,0">
+                            <materialDesign:PackIcon.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#00d2ff "/>
+                                    <GradientStop Color="#3a47d5" Offset="1"/>
+                                </LinearGradientBrush>
+                            </materialDesign:PackIcon.Foreground>
+                        </materialDesign:PackIcon>
+                        <TextBlock Text="Peronel Information" Foreground="#FF2198F2" FontSize="20" Margin="54,40,253,206"/>
+                        <TextBox x:Name="FirstName" FontSize="15"  FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="First Name" materialDesign:HintAssist.Foreground="#FF0B71E9" materialDesign:HintAssist.Background="White" Margin="0,76,299,157" HorizontalAlignment="Right" Width="178"   />
+                        <TextBox x:Name="LastName" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Last Name" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,76,104,157" HorizontalAlignment="Right" Width="170"  />
+                        <TextBox x:Name="Birthday" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Birthday" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="10,122,0,112" HorizontalAlignment="Left" Width="178"  />
+                        <TextBox x:Name="Residentc" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Resident" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="213,122,0,112" HorizontalAlignment="Left" Width="170"  />
+                        <TextBox x:Name="Idcard" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="ID Card" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,168,298,67" HorizontalAlignment="Right" Width="179"  />
+                        <TextBox x:Name="Datereleasecard" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Date Release Card" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,168,104,67" HorizontalAlignment="Right" Width="170"  />
+                        <TextBox x:Name="Email" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="E-mail" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,212,298,24" HorizontalAlignment="Right" Width="179"  />
+                        <TextBox x:Name="Phone" FontSize="15" FontWeight="DemiBold" Padding="15,10,0,0" Foreground="#FF0565EB" BorderBrush="#FF0565EB" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Phone" materialDesign:HintAssist.Foreground="#FF0B71E9" Margin="0,212,104,24" HorizontalAlignment="Right" Width="170"  />
+                        <Button Margin="388,92,0,82" Height="100" BorderBrush="{x:Null}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Views/888372_man_512x512.png"/>
+                            </Button.Background>
+
+                        </Button>
+                        <Button Margin="403,242,0,0" Padding="0,-8,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Click="Next">
+                            <materialDesign:PackIcon Kind="ArrowRightCircleOutline"
+                        Height="30" Width="30"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon.Foreground>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#00d2ff "/>
+                                        <GradientStop Color="#3a47d5" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </materialDesign:PackIcon.Foreground>
+                            </materialDesign:PackIcon>
+                        </Button>
+
+                    </Grid>
+                    <Grid x:Name="selectgrid"  Visibility="Collapsed">
+                        <Button x:Name="idoombtn" Click="idoombtn_Click" Style="{DynamicResource ButtonStyle1}"   HorizontalAlignment="Left" Height="222" Margin="38,0,0,0" VerticalAlignment="Center" Width="175" BorderBrush="{x:Null}" >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#00d2ff "/>
+                                    <GradientStop Color="#3a47d5" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <StackPanel Height="93" Width="88">
+                                <TextBlock Text="Idoom Adsl" FontSize="15" Padding="0,0,25,0"  TextAlignment="Center" Width="50"/>
+                                <materialDesign:PackIcon Kind="Ethernet" Margin="28,0,0,0" Foreground="White" Height="50" Width="30"/>
+                                <TextBlock Text="Fibre  And Adsl" FontSize="11.5" Margin="5,-4,0,0" Height="18"/>
+                            </StackPanel>
+
+                        </Button>
+                        <Button x:Name="btn4g" Style="{DynamicResource ButtonStyle1}"   HorizontalAlignment="Left" Height="222" Margin="280,0,0,0" VerticalAlignment="Center" Width="175" BorderBrush="{x:Null}" >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#00d2ff "/>
+                                    <GradientStop Color="#3a47d5" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <StackPanel Height="93" Width="120">
+                                <TextBlock Text="Idoom 4G" FontSize="15" Padding="0,0,0,0"  TextAlignment="Center" Width="80"/>
+                                <materialDesign:PackIcon Kind="Signal4g" Margin="42,0,0,0" Foreground="White" Height="50" Width="30"/>
+                                <TextBlock Text="Lte" FontSize="11.5" Margin="5,-4,0,0" Height="18" Padding="48,0,0,0"/>
+                            </StackPanel>
+
+                        </Button>
+
+                        <Button Margin="-26,2,429,240" Padding="0,-8,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Click="Previous">
+                            <materialDesign:PackIcon Kind="ArrowLeftCircleOutline"
+                        Height="30" Width="30"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon.Foreground>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#00d2ff "/>
+                                        <GradientStop Color="#3a47d5" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </materialDesign:PackIcon.Foreground>
+                            </materialDesign:PackIcon>
+                        </Button>
+
+
+                    </Grid>
+
+
+                    <Grid x:Name="offregrid"  Visibility="Collapsed" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="251*"/>
+                            <RowDefinition Height="23*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="354*"/>
+                            <ColumnDefinition Width="133*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Back" FontSize="10" Grid.Column="0" Grid.Row="1" Style="{StaticResource GridEditButton}"  HorizontalAlignment="Left"
+                              Height="24"  Margin="10,0,0,0" Width="107" Click="Previous">
+
+                        </Button>
+                        <Button Content="Finish" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="24"
+                               Style="{StaticResource GridEditButton}" Width="107" FontSize="10"  Click="Button_Click"/>
+
+                        <Grid x:Name="grdoffre" Grid.Column="0" Grid.Row="0">
+                            
+                        </Grid>
+                        <Grid x:Name="grdconvention" Grid.Column="1" Grid.Row="0" Margin="0,44,0,5">
+                            <ListView Margin="0,10,0,0" x:Name="lstvwconv" Background="red">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="20" Height="25" Width="100" Margin="0,0,0,0">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FF7786E6"/>
+                                                    <GradientStop Color="#FF1746FD" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <Grid>
+                                                <TextBlock Text="{Binding Name}" TextAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+
+                        </Grid>
+
+
+
+
+
+                    </Grid>
+
+                </Grid>
+
+            </Border>
         </Grid>
     </Border>
 </UserControl>

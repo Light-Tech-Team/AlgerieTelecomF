@@ -9,90 +9,94 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace AlgerieTelecomF.ViewModel
 {
-    internal class HistoryViewModel : INotifyPropertyChanged
+   public class HistoryViewModel 
     {
        List<HistoryEntity> entities = new List<HistoryEntity>();
-        List<HistoryModel> model = new List<HistoryModel>();
+       public  List<HistoryModel> modelh = new List<HistoryModel>();
        
         List <OffreModel> ofremodel = new List<OffreModel>();
+        public List<int> listphone = new List<int>();
 
         public HistoryViewModel()
-        { 
-           
-            entities.Add(new HistoryEntity { id = 1, date = new DateTime(2022, 09, 12),
-                offrenameh = "Idoom", offretypeh = "4Mbp/s", agreementname = "Police",
-                principaleline = 33394343,resident = "Rue Ben Badis",
-                
-            });
-            entities.Add(new HistoryEntity
-            {
-                id = 1,
-                date = new DateTime(2022, 09, 12),
-                offrenameh = "Idoom",
-                offretypeh = "4Mbp/s",
-                agreementname = "Police",
-                principaleline = 33394343,
-                resident = "Rue Ben Badis",
-              
-                
-            });
-            entities.Add(new HistoryEntity
-            {
-                id = 1,
-                date = new DateTime(2022, 09, 12),
-                offrenameh = "Idoom",
-                offretypeh = "4Mbp/s",
-                agreementname = "Police",
-                principaleline = 33394343,
-                resident = "Rue Ben Badis",
-                
-                
-            });
+        {
 
 
-            foreach (HistoryEntity c in entities)
-            {
-                model.Add(new HistoryModel()
-                {
-                    Id = c.id++,
-                    Date = c.date,
-                    Offrenameh = c.offrenameh,
-                    Offretypeh = c.offretypeh,
-                    Agreementname = c.agreementname,
-                    Numberline = c.principaleline,
-                    Resident = c.resident
-                });
+            
+
+
+
             }
 
-        }
-        
-        
-
-
-   
-
-        public void setmodels(HistoryModel mdl)
-        {
-            model.Add(mdl);
-
-        }
-
-        public List<HistoryModel> listmodels()
+        public void setHistory(HistoryModel mdl)
         {
 
-            return model;
+
         }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        public List<HistoryModel> GetHistory(int histphone)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+
+            modelh.Add(new HistoryModel() { Offrenameh = History.offrenameh , Offretypeh = History.offretypeh,Agreementname =History.agreementname,Resident=History.resident,Numberline = History.principaleline});
+
+            return modelh;
+
         }
+
+
+        public IEnumerable<int> GetNumber()
+        {
+            var query = from item in modelh select item.Numberline;
+           
+
+            return query;
+        }
+
+       /* public List<int> GetEmptyNumber()
+        {
+            var query = from item in entities select item.principaleline;
+
+
+            return query.ToList();
+
+        }*/
+
+
+
+        public void UpdateNumber(int numberline)
+        {
+
+
+        }
+
+        // class end 
+    }
+
+
+
+
+
+
+       
+
+        /*   public List<int> GetNumber()
+           {
+
+               foreach(HistoryEntity c in entities)
+               {
+                   return c.principaleline;
+               }
+
+           }*/
+
+
+      
 
     }
-}
+
+

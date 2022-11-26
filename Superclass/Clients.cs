@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AlgerieTelecomF
 {
-    public class Clients
+    public  class Clients
     {
-        public int code;
-        public string firstName;
-        public string lastName;
-        public DateTime birthDay;
-        public int cardId;
-        public DateTime cardDate;
-        public int phone;
-        public string email;
+        public static int code;
+        public static string firstName;
+        public static string lastName;
+        public static DateTime birthDay;
+        public static int cardId;
+        public static DateTime cardDate;
+        public static int phone;
+        public static string email;
 
     }
 }

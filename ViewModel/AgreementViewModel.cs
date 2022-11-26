@@ -22,24 +22,30 @@ namespace AlgerieTelecomF.ViewModel
             agrentity.Add(new AgreementEntity { name = "Militaire", remise = 0.5f });
             agrentity.Add(new AgreementEntity { name = "Teacher", remise = 0.5f });
 
-           
+            foreach (AgreementEntity c in agrentity)
+            {
+
+                agrmodel.Add(new AgreementModel() { Name = c.name, Remise = c.remise });
+            }
 
 
 
         }
-        public List<AgreementModel> listagr()
+        public List<AgreementModel> GetAgreement()
         {
 
-            foreach(AgreementEntity c  in agrentity)
-            {
-
-                agrmodel.Add(new AgreementModel() { Name = c.name, Remise=c.remise} );
-            }
+           
 
 
             return agrmodel;    
         }
 
+        public void SetAgreement(AgreementModel agreement)
+        {
+            agrmodel.Add(new AgreementModel{Name = agreement.Name , Remise = agreement.Remise });
+
+
+        }
 
 
 

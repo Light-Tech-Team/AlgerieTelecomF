@@ -48,14 +48,14 @@
 
 
             </ScrollViewer>
-            <ComboBox  x:Name="comboconv" Style="{DynamicResource MaterialDesignOutlinedComboBox}" HorizontalAlignment="Left" Height="36" Margin="292,62,0,0" VerticalAlignment="Top" Width="163"
+            <ComboBox  x:Name="comboconv" Style="{DynamicResource ComboBoxStyle1}" HorizontalAlignment="Left" Height="36" Margin="292,62,0,0" VerticalAlignment="Top" Width="163"
                        Visibility="Collapsed" 
                       >
 
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <ComboBoxItem Content="{Binding Name}" Selected="SelectAgrement">
-                        
+
                         </ComboBoxItem>
 
                     </DataTemplate>
@@ -81,10 +81,14 @@
                             <GradientStop Color="#FF2334FF" Offset="1"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <TextBox x:Name="NameOfr" HorizontalAlignment="Left" Height="34" Margin="130,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
-                    <TextBox x:Name="TypeOfr" HorizontalAlignment="Left" Height="34" Margin="130,84,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
-                    <TextBox x:Name="CostOfr" PreviewTextInput="PreviewTextInput" HorizontalAlignment="Left" Height="34" Margin="130,132,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
-                    <Button Content="Submit" HorizontalAlignment="Left" Height="29" Margin="324,185,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click_2" Background="{x:Null}" BorderBrush="White"/>
+                    <TextBox x:Name="NameOfr" HorizontalAlignment="Left" Height="34" Margin="169,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <TextBox x:Name="TypeOfr" HorizontalAlignment="Left" Height="34" Margin="169,87,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <TextBox x:Name="CostOfr" PreviewTextInput="PreviewTextInput" HorizontalAlignment="Left" Height="34" Margin="169,135,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="160" Background="#FFE1EDF6"/>
+                    <Button Content="Submit" HorizontalAlignment="Left" Height="29" Margin="259,191,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click_2" Background="{x:Null}" BorderBrush="White"/>
+                    <TextBlock Foreground="Snow" FontSize="16" HorizontalAlignment="Left" Height="24" Margin="70,42,0,0" TextWrapping="Wrap" Text="Name Offre" VerticalAlignment="Top" Width="91"/>
+                    <TextBlock Foreground="Snow" FontSize="16" HorizontalAlignment="Left" Height="24" Margin="70,91,0,0" TextWrapping="Wrap" Text="Type Offre" VerticalAlignment="Top" Width="91"/>
+                    <TextBlock Foreground="Snow" FontSize="16" HorizontalAlignment="Left" Height="24" Margin="70,142,0,0" TextWrapping="Wrap" Text="Price Offre" VerticalAlignment="Top" Width="91"/>
+                    <Button Content="Close" HorizontalAlignment="Left" Height="29" Margin="343,191,0,0" VerticalAlignment="Top" Width="79"  Background="{x:Null}" BorderBrush="White" Click="Button_Click_3"/>
 
                 </Grid>
 

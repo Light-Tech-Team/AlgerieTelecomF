@@ -39,7 +39,7 @@ namespace AlgerieTelecomF.ViewModel
 
         }
 
-          public List<OffreModel> listmodels()
+          public List<OffreModel> GetAllOffer()
          { 
               foreach (OffreEntity c in entities)
                     {
@@ -52,7 +52,7 @@ namespace AlgerieTelecomF.ViewModel
           }       
 
 
-        public void addmodel(string name,string type, float cost)
+        public void SetOffre(string name,string type, float cost)
         {
             entities.Add(new OffreEntity { id = 1, name = name, type = type, cost = cost });
             model.Clear();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -38,24 +39,33 @@ namespace AlgerieTelecomF.Views
         List<AgreementEntity> ent = new List<AgreementEntity>();    
         AgreementViewModel agrvmdl = new AgreementViewModel();
         public BindableCollection<AgreementModel> lstagr { get; set; }
+        public ObservableCollection<AgreementModel> agreementList;
+
         public Promotion()
         {
-            InitializeComponent();
+              
 
-            
-            varoffers = GetOffers(pr);
+        InitializeComponent();
+
+               
+
+
+        varoffers = GetOffers(pr);
             
           if (varoffers.Count > 0)
                itemsoffer.ItemsSource = varoffers;
             HistoryViewModel viewmodelh = new HistoryViewModel();
-            lstagr = new BindableCollection<AgreementModel>(agrvmdl.listagr());
+            lstagr = new BindableCollection<AgreementModel>(agrvmdl.GetAgreement());
             comboconv.ItemsSource = lstagr;
             comboconv.DataContext = lstagr;
+
+            
+
 
         }
         public List<offers> GetOffers(float i)
         {
-              foreach (OffreModel offre in viewmodel.listmodels())
+              foreach (OffreModel offre in viewmodel.GetAllOffer())
               {
                 offer.Add(new offers(offre.Name, offre.Type, offre.Cost*i ));
 
@@ -99,7 +109,7 @@ namespace AlgerieTelecomF.Views
         {
             //  viewmodel.
                
-                viewmodel.addmodel (NameOfr.Text, TypeOfr.Text, (float)float.Parse(CostOfr.Text));
+                viewmodel.SetOffre (NameOfr.Text, TypeOfr.Text, (float)float.Parse(CostOfr.Text));
             Console.WriteLine("bbbbbb");
             itemsoffer.ItemsSource = null;
             offer.Clear();
@@ -126,7 +136,7 @@ namespace AlgerieTelecomF.Views
 
 
 
-           var res = from item in agrvmdl.listagr() where item.Name == name select item.Remise;
+           var res = from item in agrvmdl.GetAgreement() where item.Name == name select item.Remise;
             pr = res.First();
 
             itemsoffer.ItemsSource = null;
@@ -135,6 +145,11 @@ namespace AlgerieTelecomF.Views
             itemsoffer.ItemsSource = varoffers;
 
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            BrdAddOfr.Visibility = Visibility.Collapsed;
         }
     }
 }
